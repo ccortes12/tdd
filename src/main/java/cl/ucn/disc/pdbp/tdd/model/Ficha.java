@@ -28,7 +28,7 @@ public final class Ficha {
     /**
      * The numero of ficha
      */
-    private final Integer numeroFicha;
+    private static Integer numeroFicha = 1000;
 
     /**
      * The nombre
@@ -57,30 +57,32 @@ public final class Ficha {
 
     /**
      * Tipo: externo/interno
+     * Tipo is an enum
      */
     private final Tipo tipo;
 
     /**
      * Sexo: macho, hembra
+     * Sexo is an enum
      */
     private final Sexo sexo;
 
     /**
      * The constructor of Ficha
-     * @param numeroFicha
      * @param nombrePaciente
      * @param especie
-     * @param fechaNaciemiento
+     * @param fechaNacimiento
      * @param raza
      * @param color
      * @param tipo
      * @param sexo
      */
-    public Ficha(Integer numeroFicha, String nombrePaciente, String especie, ZonedDateTime fechaNaciemiento, String raza, String color, Tipo tipo, Sexo sexo) {
-        this.numeroFicha = numeroFicha;
+    public Ficha(String nombrePaciente, String especie, ZonedDateTime fechaNacimiento, String raza, String color, Tipo tipo, Sexo sexo) {
+        this.numeroFicha += 1;  //Generado automaticamente
+
         this.nombrePaciente = nombrePaciente;
         this.especie = especie;
-        this.fechaNaciemiento = fechaNaciemiento;
+        this.fechaNaciemiento = fechaNacimiento;
         this.raza = raza;
         this.color = color;
         this.tipo = tipo;

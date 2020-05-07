@@ -113,4 +113,39 @@ public final class ModelTest {
 
     }
 
+
+    /**
+     * Test de Ficha
+     * -Id correlativo generado automaticamente
+     * -Nombre del paciente
+     * -Especie Ej canino
+     * -Fecha de nacimiento: puede ser exacta o estimada Ej. enero 2014
+     * -Sexo: macho o hembra
+     * -Color: Ej. rojo cobrizo
+     * -Tipo: interno o externo
+     */
+    @Test
+    public void testFicha(){
+
+        log.debug("Testing Ficha ..");
+
+        // The data!
+        log.debug(".. valid ..");
+        Integer numFicha = 10000;
+        String nombre = "Firulay";
+        String especie = "canino";
+        String fechaNacimiento = "Enero 2014";
+        String raza = "Rottweiler";
+        String sexo = "Hembra";
+        String color = "Cafe";
+        String tipo = "Interno";
+
+        // Test constructor and getters
+
+
+
+
+    }
+
+
 }
