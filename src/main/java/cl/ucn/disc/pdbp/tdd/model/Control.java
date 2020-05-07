@@ -69,10 +69,10 @@ public final class Control {
     /**
      * The constructor Control
      * @param fechaControl
-     * @param fechaProxControl
-     * @param temperatura
-     * @param peso
-     * @param altura
+     * @param fechaProxControl  Solo si aplica
+     * @param temperatura en grados celsius
+     * @param peso en kilogramos
+     * @param altura en centimetros
      * @param diagnostico
      * @param veterinario
      */
