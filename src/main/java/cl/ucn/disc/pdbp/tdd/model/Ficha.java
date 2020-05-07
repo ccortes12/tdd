@@ -23,7 +23,7 @@ import java.time.ZonedDateTime;
  *
  * @author Carlos Cortes
  */
-public class Ficha {
+public final class Ficha {
 
     /**
      * The numero of ficha

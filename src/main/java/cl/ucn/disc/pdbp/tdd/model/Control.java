@@ -23,7 +23,7 @@ import java.time.ZonedDateTime;
  *
  * @author Carlos Cortes
  */
-public class Control {
+public final class Control {
 
     /**
      * The fechaControl
@@ -37,16 +37,22 @@ public class Control {
 
     /**
      * The temperatura
+     * min:20
+     * max:50 //TODO:Validacion temperatura
      */
     private final float temperatura;
 
     /**
-     * The peso
+     * The peso (kg)
+     * min:0
+     * max: 200  //TODO: Validacion del peso
      */
     private final float peso;
 
     /**
      * The altura
+     * Min: 0
+     * Max: 200 // TODO: Verificar la altura maxima de un paciente.
      */
     private final float altura;
 
