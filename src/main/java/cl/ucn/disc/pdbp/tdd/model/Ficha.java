@@ -61,9 +61,14 @@ public class Ficha {
     private final Tipo tipo;
 
     /**
+     * Sexo: macho, hembra
+     */
+    private final Sexo sexo;
+
+    /**
      * The constructor
      */
-    public Ficha(Integer numeroFicha, String nombrePaciente, String especie, ZonedDateTime fechaNaciemiento, String raza, String color, Tipo tipo) {
+    public Ficha(Integer numeroFicha, String nombrePaciente, String especie, ZonedDateTime fechaNaciemiento, String raza, String color, Tipo tipo, Sexo sexo) {
         this.numeroFicha = numeroFicha;
         this.nombrePaciente = nombrePaciente;
         this.especie = especie;
@@ -71,6 +76,7 @@ public class Ficha {
         this.raza = raza;
         this.color = color;
         this.tipo = tipo;
+        this.sexo = sexo;
     }
 
     /**
@@ -128,4 +134,13 @@ public class Ficha {
     public Tipo getTipo() {
         return tipo;
     }
+
+    /**
+     *
+     * @return the sexo
+     */
+    public Sexo getSexo() {
+        return sexo;
+    }
 }
+
