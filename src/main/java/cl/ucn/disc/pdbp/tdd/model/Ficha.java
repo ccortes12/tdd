@@ -66,7 +66,15 @@ public class Ficha {
     private final Sexo sexo;
 
     /**
-     * The constructor
+     * The constructor of Ficha
+     * @param numeroFicha
+     * @param nombrePaciente
+     * @param especie
+     * @param fechaNaciemiento
+     * @param raza
+     * @param color
+     * @param tipo
+     * @param sexo
      */
     public Ficha(Integer numeroFicha, String nombrePaciente, String especie, ZonedDateTime fechaNaciemiento, String raza, String color, Tipo tipo, Sexo sexo) {
         this.numeroFicha = numeroFicha;
