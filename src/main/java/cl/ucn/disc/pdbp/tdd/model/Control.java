@@ -68,7 +68,7 @@ public final class Control {
 
     /**
      * The constructor Control
-     * @param fechaControl
+     * @param fechaControl Debe ser la del dia de hoy
      * @param fechaProxControl  Solo si aplica
      * @param temperatura en grados celsius
      * @param peso en kilogramos

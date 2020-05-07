@@ -15,12 +15,15 @@
  */
 
 package cl.ucn.disc.pdbp.tdd.model;
+
+import cl.ucn.disc.pdbp.utils.Validation;
+
 /**
  * The Dueño class
  *
  * @author Carlos Cortes
  */
-public final class Dueño {
+public final class Dueno {
 
     /**
      * The nombre
@@ -34,35 +37,37 @@ public final class Dueño {
 
     /**
      * The telefonoFijo
-     * TODO:Validar telefono fijo
      */
     private final String telefonoFijo;
 
     /**
      * The telefonoMovil
-     * TODO:Validar telefono movil
      */
     private final String telefonoMovil;
 
     /**
      * The email
-     * TODO:Validacion de mail valido
      */
     private final String email;
 
     /**
      * The rut
-     * TODO: Validacion de rut
      */
     public final String rut;
 
     /**
      * Constructor de un dueño
-     * -El mail debe ser valido
-     * -El mail no puede ser null
-     * -TODO:Validacion del los telefonos
+     * -Nombre no puede ser vacio
+     * -Nombre no debe tener un tamaño menor o igual a dos
      * -El rut debe ser valido
      * -El rut no puede ser null
+     * -No se puede ingresar un rut ya existente TODO:Validar la existencia de un rut
+     * -La direccion no puede ser vacia
+     * -La direccion no debe tener un tamaño menor o igual a dos
+     * -El teléfono fijo vació o de tamaño menor o igual que seis y comprobar que se indica con un error.
+     * -El teléfono móvil vació o de tamaño menor o igual que seis y comprobar que se indica con un error.
+     * -El mail debe ser valido
+     * -El mail no puede ser vacio
      *
      * @param nombre
      * @param direccion
@@ -71,13 +76,47 @@ public final class Dueño {
      * @param email
      * @param rut
      */
-    public Dueño(String nombre, String direccion, String telefonoFijo, String telefonoMovil, String email, String rut) {
+    public Dueno(String nombre, String direccion, String telefonoFijo, String telefonoMovil, String email, String rut) {
+
+        if(nombre == null || rut == null || direccion == null || telefonoFijo == null || telefonoMovil == null || email == null){
+            throw new NullPointerException("Nombre,rut, direccion, telefonoFijo, telefonoMovil and Email cannot be null");
+        }
+
+        //Size of nombre
+        if (nombre.length() < 2) {
+            throw new RuntimeException("Nombre must be greater than 2 characters");
+        }
         this.nombre = nombre;
+
+        //Size of apellido
+        if (direccion.length() < 2) {
+            throw new RuntimeException("Nombre must be greater than 2 characters");
+        }
         this.direccion = direccion;
+
+        //Size of telefonoFijo
+        if (telefonoFijo.length() < 6) {
+            throw new RuntimeException("Nombre must be greater than 2 characters");
+        }
         this.telefonoFijo = telefonoFijo;
+
+        //Size of telefonoMovil
+        if (telefonoMovil.length() < 6) {
+            throw new RuntimeException("Nombre must be greater than 2 characters");
+        }
         this.telefonoMovil = telefonoMovil;
-        this.email = email;
+
+        // RUT valid.
+        if (!Validation.isRutValid(rut)) {
+            throw new RuntimeException("RUT should be valid");
+        }
         this.rut = rut;
+
+        // Email valid.
+        if (!Validation.isEmailValid(email)) {
+            throw new RuntimeException("Email should be valid");
+        }
+        this.email = rut;
     }
 
     /**

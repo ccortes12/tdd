@@ -16,6 +16,7 @@
 
 package cl.ucn.disc.pdbp.utils;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -70,4 +71,15 @@ public final class Validation {
         return dv == (char) (s != 0 ? s + 47 : 75);
     }
 
+    /**
+     * https://cesarg.cl/validacion-email-java/
+     *
+     * @param email
+     * @return true is valid email
+     */
+    public static boolean isEmailValid(String email) {
+        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 }
